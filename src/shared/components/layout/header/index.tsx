@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <section
-      className={`sticky top-0 z-40 w-full flex justify-between items-center gap-5 py-5 px-10 bg-white ${
+      className={`sticky top-0 z-50 w-full flex justify-between items-center gap-5 py-5 px-10 bg-white ${
         isScrolled
           ? "border-b-[1px] border-opacity-50 border-gray-300 absolute inset-0 bg-[#e4e4e4] bg-opacity-10 backdrop-filter backdrop-blur duration-500 ease-in-out"
           : "bg-transparent bg-opacity-100 duration-500 ease-in-out"

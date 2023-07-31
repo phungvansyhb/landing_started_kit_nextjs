@@ -5,8 +5,9 @@ import { bannerData } from "@/shared/mock/banner";
 
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import NextGenerationSolution from "@/shared/components/home/NextGenerationSolution";
+import NextGenerationSolution from "@/shared/components/home/nextGenerationSolution";
 import WhyUs from "@/shared/components/home/whyUs";
+import SeminarEvent from "@/shared/components/home/seminarEvent";
 const inter = Inter({ subsets: ["latin"] });
 
 export function Home() {
@@ -18,6 +19,7 @@ export function Home() {
       <Banner data={bannerData} />
       <NextGenerationSolution />
       <WhyUs />
+      <SeminarEvent />
     </>
   );
 }

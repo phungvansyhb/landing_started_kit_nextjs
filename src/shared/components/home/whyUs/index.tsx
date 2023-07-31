@@ -1,16 +1,11 @@
 import { IWhyUsData, WhyUsData } from "@/shared/mock/whyUs";
 import { useState } from "react";
 import ContentWhyUs from "./ContentWhyUs";
-import IconNGS from "./iconNGS";
+import IconNGS from "./IconNGS";
 
 const WhyUs = () => {
   const [selectedIcon, setSelectedIcon] = useState<IWhyUsData>(WhyUsData[0]);
-  const handleChangeIndex = () => {
-    setSelectedIcon((): IWhyUsData | any => {
-      const currentIndex = selectedIcon.key;
-      return currentIndex < WhyUsData.length ? WhyUsData[currentIndex] : WhyUsData[0];
-    });
-  };
+
   return (
     <>
       <section className="w-full flex flex-col justify-around items-center mx-auto px-16 py-10">
@@ -36,8 +31,8 @@ const WhyUs = () => {
           <div className="w-full">
             <ContentWhyUs selectedIcon={selectedIcon && selectedIcon} />
           </div>
-          <div className="w-full">
-            <IconNGS handleNext={handleChangeIndex} selectedIcon={selectedIcon && selectedIcon} setSelectedIcon={setSelectedIcon} />
+          <div className="w-full z-40">
+            <IconNGS selectedIcon={selectedIcon && selectedIcon} setSelectedIcon={setSelectedIcon} />
           </div>
         </div>
       </section>
