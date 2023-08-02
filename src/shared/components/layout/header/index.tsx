@@ -1,16 +1,11 @@
 import { fakeMenu } from "@/shared/mock/menu";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import IconArrowDown from "../../icon/IconArrowDown";
 import MenuNGS from "../../icon/logo/MenuNGS";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -37,44 +32,22 @@ const Header = () => {
           : "bg-transparent bg-opacity-100 duration-500 ease-in-out"
       } transition`}
     >
+      <div className="flex justify-around items-center">
       <MenuNGS />
-      <ul className="justify-center items-cente gap-5 hidden lg:flex">
+      <ul className="justify-center items-cente gap-3 hidden lg:flex ml-10">
         {fakeMenu.map((item, inx) => (
           <Link href={"#"} key={inx}>
             <li>{item}</li>
           </Link>
         ))}
       </ul>
-      <div className="relative flex justify-center items-center gap-2">
-        <button
-          id="dropdownDefaultButton"
-          onClick={handleToggle}
-          className="text-white bg-slate-300 hover:bg-slate-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center"
-          type="button"
-        >
-          <>
-            {/* <VI/> */}
-            <IconArrowDown />
-          </>
-        </button>
-        {isOpen && (
-          <div
-            id="dropdown"
-            className="z-10 absolute top-10 -right-10 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-          >
-            <ul
-              className="py-2 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownDefaultButton"
-            >
-              <li></li>
-              <li>Data Protection Policy</li>
-            </ul>
-          </div>
-        )}
+      </div>
+      <div className="absolute right-5 flex justify-center items-center gap-2">
         <button className="bg-[#FBA704] hover:bg-orange-500 text-white font-bold py-2 px-4 rounded cursor-pointer hidden lg:block">
           Liên hệ
         </button>
       </div>
+      <div className="block md:hidden">...</div>
     </section>
   );
 };

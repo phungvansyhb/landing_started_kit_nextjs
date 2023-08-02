@@ -2,7 +2,6 @@ interface Props {
   src: string;
   height: number;
 }
-
 export function PreImage({ src, height }: Props) {
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>

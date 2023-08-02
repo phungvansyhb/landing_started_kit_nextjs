@@ -16,7 +16,7 @@ const InfoCard = ({ title, description }: Props) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       animate={{
-        marginBottom: isHovered ? 50 : 0,
+        translateY: isHovered ? "-50%" : 0,
       }}
       transition={{
         duration: 0.2,
@@ -25,17 +25,11 @@ const InfoCard = ({ title, description }: Props) => {
     >
       <PreImage
         src="https://media.istockphoto.com/id/807772812/photo/free-price-tag-label.jpg?b=1&s=612x612&w=0&k=20&c=fzSheLfuW29DGtg5nVudNgp0Wzvh4oaxTrI0qoZtsPU="
-        height={150}
+        height={200}
       />
-      <div
-        className="flex flex-col justify-center items-center"
-        style={{
-          overflow: "hidden",
-          height: isHovered ? "auto" : 0,
-        }}
-      >
+      <div className="flex flex-col justify-center items-center">
         <h3 className="font-medium">{title}</h3>
-        {/* <p>{description}</p> */}
+        <p>{description}</p>
       </div>
     </motion.div>
   );

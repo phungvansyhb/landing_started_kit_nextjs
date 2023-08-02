@@ -10,7 +10,7 @@ const NextGenerationSolution = () => {
         </div>
         <p>{NGSDataGSL[0].des}</p>
       </div>
-      <div className="w-full grid grid-cols-5 bg-[#FBA704]">
+      <div className="w-full max-h-[250px] grid grid-cols-5 bg-[#FBA704] overflow-hidden">
         {NGSDataGSL.map((item, idx) => (
           <InfoCard key={idx} title={item.title} description={item.des} />
         ))}

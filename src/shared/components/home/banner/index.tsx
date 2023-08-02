@@ -58,26 +58,28 @@ const Banner = ({ data }: Props) => {
         </AnimatePresence>
         <ContentBanner selectedTab={selectedTab && selectedTab} />
         <div className="absolute bottom-10 right-10">
-          <ul className="flex items-center justify-between gap-5">
-            {data.map((item, idx) => (
-              <li
-                key={idx}
-                className={`${
-                  item === selectedTab ? "text-blue-500" : ""
-                } cursor-pointer font-medium`}
-                onClick={() => setSelectedTab(item)}
-              >
-                {`${item.title}`}
-                {item === selectedTab ? (
-                  <motion.div className="" layoutId="underline" />
-                ) : null}
-              </li>
-            ))}
-            <li className="flex items-center justify-center gap-5 cursor-pointer">
-              <IconArrowLeft onClick={handlePrev}/>
+          <div className="flex items-center justify-between gap-5">
+            <ul className="hidden md:flex items-center justify-between gap-5">
+              {data.map((item, idx) => (
+                <li
+                  key={idx}
+                  className={`${
+                    item === selectedTab ? "text-blue-500" : ""
+                  } cursor-pointer font-medium`}
+                  onClick={() => setSelectedTab(item)}
+                >
+                  {`${item.title}`}
+                  {item === selectedTab ? (
+                    <motion.div className="" layoutId="underline" />
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+            <div className="flex items-center justify-center gap-5 cursor-pointer z-30">
+              <IconArrowLeft onClick={handlePrev} />
               <IconArrowRight onClick={handleNext} />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

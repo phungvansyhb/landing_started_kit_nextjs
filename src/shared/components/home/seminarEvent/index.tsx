@@ -5,7 +5,9 @@ import { PreImage } from "../../common/PreImage";
 import ContentEvent, { ISeminar } from "./ContentEvent";
 
 const SeminarEvent = () => {
-  const [selectedTab, setSelectedTab] = useState<ISeminar>(seminarData[0] as ISeminar);
+  const [selectedTab, setSelectedTab] = useState<ISeminar>(
+    seminarData[0] as ISeminar
+  );
 
   return (
     <section className="w-full flex flex-col justify-around items-center mx-auto px-16 py-10">
@@ -27,7 +29,7 @@ const SeminarEvent = () => {
                       : "translateX(-10px)",
                 }}
                 transition={{
-                  duration: 0.2,
+                  duration: 1,
                   ease: "easeInOut",
                 }}
                 className={`${
@@ -35,8 +37,19 @@ const SeminarEvent = () => {
                 } w-full flex-shrink-0 snap-start cursor-pointer`}
                 onClick={() => setSelectedTab(item)}
               >
+                 <motion.div
+                  layout
+                  className={`${
+                    item === selectedTab ? "col-span-3" : "col-span-1"
+                  } w-full`}
+                >
                 <PreImage src={item.image} height={650} />
-                {item === selectedTab ? <ContentEvent seminarData={item} /> : ""}
+                {item === selectedTab ? (
+                  <ContentEvent seminarData={item} />
+                ) : (
+                  ""
+                )}
+                </motion.div>
               </motion.div>
             );
           })}

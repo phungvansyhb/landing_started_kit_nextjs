@@ -29,7 +29,7 @@ interface Props {
 }
 const ContentBanner = ({ selectedTab }: Props) => {
   return (
-    <div className="absolute top-40 z-10 mx-auto flex w-4/5 min-h-screen flex-col px-16 leading-[90%] tracking-wide lg:w-[50%] lg:px-16">
+    <div className="absolute top-40 z-10 mx-auto flex w-[90%] min-h-screen flex-col items-center leading-[90%] tracking-wide left-10 md:left-20 md:w-4/5 lg:left-0 lg:w-[50%] lg:px-16 lg:items-start">
       <div className="text-left text-4xl font-bold capitalize lg:text-6xl">
         <h1 className="inline-block pr-2 text-4xl lg:text-6xl">Cải Tiến</h1>
         <AnimatePresence mode="wait">
@@ -53,9 +53,7 @@ const ContentBanner = ({ selectedTab }: Props) => {
       <motion.div className="text-sm lg:text-lg mt-5">
         {selectedTab ? selectedTab.description : ""}
       </motion.div>
-      <div className="w-2/3">
-        <BtnFindOut />
-      </div>
+      <BtnFindOut />
     </div>
   );
 };
