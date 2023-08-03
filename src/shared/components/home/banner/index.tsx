@@ -27,7 +27,7 @@ const Banner = ({ data }: Props) => {
       return prevIndex >= 0 ? data[prevIndex] : data[data.length - 1];
     });
   };
-
+  
   return (
     <section className="block m-8">
       <div className="snap-x-mandatory scrollbar-none relative max-h-[700px] flex overflow-hidden text-white bg-[var(--blue-color-700)] rounded-lg">

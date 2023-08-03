@@ -6,6 +6,10 @@ import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
+import { Golos_Text, Inter } from 'next/font/google'
+
+const goloText = Golos_Text({ subsets: ["latin-ext", "cyrillic"], display: 'swap', weight: ['500', '600', '700', '800', '900'] })
+const interText = Inter({ subsets: ["vietnamese"], display: 'swap', weight: ['500', '600', '700', '800', '900'] })
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => React.ReactNode;
@@ -31,7 +35,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ?? ((page) => <LayoutWebsite>{page}</LayoutWebsite>);
   return (
-    <>
+    <main className={interText.className}>
       <Head>
         <title>Website NGS</title>
         <meta name="description" content="Website NGS" />
@@ -47,11 +51,13 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           href="/logo.svg"
         />
       </Head>
+
       <QueryClientProvider client={queryClient}>
         <ConfigLayout getLayout={getLayout}>
           <Component {...pageProps} />
         </ConfigLayout>
-      </QueryClientProvider>
-    </>
+
+      </QueryClientProvider >
+    </main>
   );
 }

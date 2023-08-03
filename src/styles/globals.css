@@ -2,19 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 @import "./business-color.css";
-@layer base {
-  ul, ol, li {
-    list-style: none;
-  }
-}
+
+
 * {
   box-sizing: border-box;
 }
+
 html {
+  @apply text-[#757693];
   max-width: 100%;
   min-height: 100%;
   overflow-x: hidden;
 }
+
+body {
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -29,12 +37,20 @@ html {
   }
 }
 
-body {
-  max-width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  color: rgb(var(--foreground-rgb));
-  background: #fff;
+
+
+::-webkit-scrollbar {
+  width: 5px;
 }
 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27326f;
+}
+
+.overflow-strategies::-webkit-scrollbar {
+  width: 0;
+}
