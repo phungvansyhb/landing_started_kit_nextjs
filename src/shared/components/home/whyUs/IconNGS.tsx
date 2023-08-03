@@ -64,16 +64,16 @@ const IconNGS = ({ setSelectedIcon, selectedIcon }: Props) => {
           }}
           onClick={() => setSelectedIcon(WhyUsData[1] as IWhyUsData)}
         >
-          <IconMid />
+          <IconMid open={true} />
         </motion.div>
       </motion.div>
       <motion.div
         initial="inactive"
         animate={selectedIcon?.key === 3 ? "active" : "inactive"}
         variants={iconLastVariants}
-        className="absolute bottom-[20px] left-[8px]"
+        className="absolute bottom-[18px] left-[18px]"
       >
-        <IconLast onClick={() => setSelectedIcon(WhyUsData[2] as IWhyUsData)} />
+        <IconLast open={selectedIcon?.key === 3} onClick={() => setSelectedIcon(WhyUsData[2] as IWhyUsData)} />
       </motion.div>
     </div>
   );

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/business-color.css";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement } from "react";
@@ -33,13 +34,17 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     <>
       <Head>
         <title>Website NGS</title>
+        <meta name="description" content="Website NGS" />
+        <meta name="keywords" content="Công nghệ thông tin, Giải pháp số" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           rel="icon"
-          href="https://careerfinder.vn/wp-content/uploads/2020/05/vietnam-airline-logo.jpg"
+          href="/logo.svg"
         />
         <link
           rel="apple-touch-icon"
-          href="https://careerfinder.vn/wp-content/uploads/2020/05/vietnam-airline-logo.jpg"
+          href="/logo.svg"
         />
       </Head>
       <QueryClientProvider client={queryClient}>

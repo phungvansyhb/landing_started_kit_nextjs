@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PreImage } from "../../common/PreImage";
 import IconArrowLeft from "../../icon/IconArrowLeft";
 import IconArrowRight from "../../icon/IconArrowRight";
@@ -15,7 +15,6 @@ interface Props {
 }
 const Banner = ({ data }: Props) => {
   const [selectedTab, setSelectedTab] = useState<Data>(data[0] as Data);
-  const [isCountingForward, setIsCountingForward] = useState(true);
   const handleNext = () => {
     setSelectedTab((prevTab): Data | any => {
       const nextIndex = data.indexOf(prevTab) + 1;
@@ -28,35 +27,24 @@ const Banner = ({ data }: Props) => {
       return prevIndex >= 0 ? data[prevIndex] : data[data.length - 1];
     });
   };
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (isCountingForward) {
-  //       handleNext()
-  //     } else {
-  //       handlePrev()
-  //     }
-  //   }, 5000);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [data, isCountingForward]);
 
   return (
-    <section className="block">
-      <div className="snap-x-mandatory scrollbar-none relative flex min-h-[650px] w-screen overflow-hidden text-white">
+    <section className="block m-8">
+      <div className="snap-x-mandatory scrollbar-none relative max-h-[700px] flex overflow-hidden text-white bg-[var(--blue-color-700)] rounded-lg">
+        <div className="w-full flex justify-between items-center mx-auto">
+        <ContentBanner selectedTab={selectedTab && selectedTab} />
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.title : "empty"}
             initial={{ x: -10, opacity: 0.8 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.1 }}
-            className="w-full flex-shrink-0 snap-start"
+            className="flex-shrink-0 snap-start lg:px-16"
           >
-            <PreImage src={selectedTab ? selectedTab.image : ""} height={650} />
+            <PreImage src={selectedTab && selectedTab.image} height={400} width={400} layer={false} alt={"Banner"} className="relative rounded-lg"/>
           </motion.div>
         </AnimatePresence>
-        <ContentBanner selectedTab={selectedTab && selectedTab} />
+        </div>
         <div className="absolute bottom-10 right-10">
           <div className="flex items-center justify-between gap-5">
             <ul className="hidden md:flex items-center justify-between gap-5">
@@ -64,7 +52,7 @@ const Banner = ({ data }: Props) => {
                 <li
                   key={idx}
                   className={`${
-                    item === selectedTab ? "text-blue-500" : ""
+                    item === selectedTab ? "text-white" : "text-slate-300 "
                   } cursor-pointer font-medium`}
                   onClick={() => setSelectedTab(item)}
                 >

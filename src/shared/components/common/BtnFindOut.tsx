@@ -8,7 +8,7 @@ interface Props {
 const BtnFindOut = ({ cls }: Props) => {
   const buttonVariants = {
     hover: {
-      backgroundColor: "#f1c40f",
+      backgroundColor: "var(--orange-color-500)",
       width: "100%",
       opacity: 0.3      
     },
@@ -16,12 +16,12 @@ const BtnFindOut = ({ cls }: Props) => {
 
   return (
     <motion.button
-      initial={{ backgroundColor: "#FF8B37" }}
+      initial={{ backgroundColor: "#fff" }}
       whileHover="hover"
-      className={`relative flex justify-between items-center gap-3 text-white text-left py-4 px-4 rounded cursor-pointer mt-3 ${cls}`}
+      className={`relative flex justify-between items-center gap-3 text-black text-left py-4 px-4 rounded cursor-pointer mt-3 ${cls}`}
     >
       <p className="text-sm">Tìm hiểu thêm</p>
-      <IconLineDirection className="text-sm" color="#fff" />
+      <IconLineDirection  color="#000" />
       <motion.div
         className="absolute left-0 top-0 h-full w-0"
         variants={buttonVariants}
