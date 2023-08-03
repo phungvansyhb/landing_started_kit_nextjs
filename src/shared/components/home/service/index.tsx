@@ -17,8 +17,8 @@ const Service = () => {
           src={
             "https://khoinguonsangtao.vn/wp-content/uploads/2022/11/hinh-nen-may-bay-vietnam-airline.jpg"
           }
-          height={400}
-          width={400}
+          height={550}
+          width={500}
           layer={false}
           alt={"Service"}
           className="relative rounded-lg"

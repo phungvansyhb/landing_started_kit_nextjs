@@ -8,6 +8,7 @@ import Testimonial from "@/shared/components/home/testimonial";
 import Service from "@/shared/components/home/service";
 import Event from "@/shared/components/home/event";
 import News from "@/shared/components/home/news";
+import Partner from "@/shared/components/home/partner";
 
 export function Home() {
   return (
@@ -23,6 +24,7 @@ export function Home() {
       <WhyUs />
       <Event />
       <News />
+      <Partner/>
       <Testimonial />
     </>
   );

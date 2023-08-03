@@ -15,7 +15,7 @@ const WhyUs = () => {
             Tại sao nên chọn đồng hành cùng chúng tôi!
           </h1>
           <div className="w-full flex justify-between items-center gap-10">
-            <div className="w-full z-40">
+            <div className="w-full z-40 float-right">
               <IconNGS
                 selectedIcon={selectedIcon && selectedIcon}
                 setSelectedIcon={setSelectedIcon}
