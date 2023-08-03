@@ -6,6 +6,8 @@ import NextGenerationSolution from "@/shared/components/home/nextGenerationSolut
 import WhyUs from "@/shared/components/home/whyUs";
 import Testimonial from "@/shared/components/home/testimonial";
 import Service from "@/shared/components/home/service";
+import Event from "@/shared/components/home/event";
+import News from "@/shared/components/home/news";
 
 export function Home() {
   return (
@@ -19,6 +21,8 @@ export function Home() {
       <NextGenerationSolution />
       <Service/>
       <WhyUs />
+      <Event />
+      <News />
       <Testimonial />
     </>
   );

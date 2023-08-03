@@ -20,7 +20,7 @@ const Service = () => {
           height={400}
           width={400}
           layer={false}
-          alt={"Banner"}
+          alt={"Service"}
           className="relative rounded-lg"
         />
         <AnimatePresence>
