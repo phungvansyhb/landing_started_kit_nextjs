@@ -6,11 +6,12 @@ import { AnimatePresence } from "framer-motion";
 
 const Service = () => {
   return (
-    <section className="px-32">
+    <section className="px-32 mt-10">
       <TitleSection
         title="Dịch vụ"
         description="Thay đổi bộ mặt Doanh nghiệp của bạn bằng giải pháp quản lý mới"
         findMore={true}
+        className="flex justify-between items-center"
       />
       <div className="w-full mt-10 flex items-start justify-between">
         <PreImage

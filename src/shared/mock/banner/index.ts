@@ -1,6 +1,6 @@
 export const bannerData = [
     {
-        title: "Hệ thống bán vé VNA",
+        title: "Công nghệ bảo mật hệ thống bán vé VNA",
         description:
             "Chúng tôi tự hào chia sẻ những case study đặc biệt, trong đó chúng tôi đã giúp các khách hàng vượt qua thách thức và đạt được thành công đáng kể",
         image:

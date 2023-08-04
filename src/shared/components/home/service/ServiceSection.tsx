@@ -17,8 +17,8 @@ const ServiceSection = ({ item, idx }: Props) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex justify-start items-start gap-8">
-        <div className="text-4xl font-bold">0{idx + 1}</div>
-        <h1 className="text-4xl font-bold">{item.title}</h1>
+        <div className="text-3xl">0{idx + 1}</div>
+        <h1 className="text-3xl">{item.title}</h1>
       </div>
 
       <motion.div

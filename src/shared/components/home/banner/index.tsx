@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import InitBasicAnimation from "../../common/InitBasicAnimation";
 import { PreImage } from "../../common/PreImage";
 import IconArrowLeft from "../../icon/IconArrowLeft";
 import IconArrowRight from "../../icon/IconArrowRight";
@@ -29,9 +30,9 @@ const Banner = ({ data }: Props) => {
   };
   
   return (
-    <section className="block m-8">
-      <div className="snap-x-mandatory scrollbar-none relative max-h-[700px] flex overflow-hidden text-white bg-[var(--blue-color-700)] rounded-lg">
-        <div className="w-full flex justify-between items-center mx-auto">
+    <section className="block py-24 bg-violet-600">
+      <div className="snap-x-mandatory scrollbar-none relative max-h-[700px] flex overflow-hidden text-white">
+        <div className="w-full flex justify-between items-center mx-auto px-12">
         <ContentBanner selectedTab={selectedTab && selectedTab} />
         <AnimatePresence mode="wait">
           <motion.div
@@ -41,11 +42,11 @@ const Banner = ({ data }: Props) => {
             transition={{ duration: 0.1 }}
             className="flex-shrink-0 snap-start lg:px-16"
           >
-            <PreImage src={selectedTab && selectedTab.image} height={400} width={400} layer={false} alt={"Banner"} className="relative rounded-lg"/>
+            <PreImage src={selectedTab && selectedTab.image} height={550} width={550} layer={false} alt={"Banner"} className="relative rounded-lg"/>
           </motion.div>
         </AnimatePresence>
         </div>
-        <div className="absolute bottom-10 right-10">
+        <InitBasicAnimation className="absolute bottom-1 right-10">
           <div className="flex items-center justify-between gap-5">
             <ul className="hidden md:flex items-center justify-between gap-5">
               {data.map((item, idx) => (
@@ -58,7 +59,7 @@ const Banner = ({ data }: Props) => {
                 >
                   {`${item.title}`}
                   {item === selectedTab ? (
-                    <motion.div className="" layoutId="underline" />
+                    <motion.div layoutId="underline" />
                   ) : null}
                 </li>
               ))}
@@ -68,7 +69,7 @@ const Banner = ({ data }: Props) => {
               <IconArrowRight onClick={handleNext} />
             </div>
           </div>
-        </div>
+        </InitBasicAnimation>
       </div>
     </section>
   );

@@ -1,45 +1,70 @@
-import { PreImage } from "../../common/PreImage";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import BtnFindOut from "../../common/BtnFindOut";
+import { PreImage } from '../../common/PreImage';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import BtnFindOut from '../../common/BtnFindOut';
 
 interface Props {
   title: string;
   description: string;
+  className: string;
 }
 
-const InfoCard = ({ title, description }: Props) => {
+const InfoCard = ({ title, description, className }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className="flex flex-col justify-center items-center p-5 cursor-pointer overflow-hidden border-collapse"
-      style={{ border: "1px solid #555" }}
+      className={`flex flex-col justify-start items-start p-3 cursor-pointer overflow-hidden border-collapse ${className}`}
+      style={{ border: '1px solid #222442' }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       animate={{
-        backgroundColor: isHovered ? "var(--blue-color-400)" : "#fff",
-        color: isHovered ? "#fff" : "#000",
+        backgroundColor: isHovered ? '' : '#141523',
+        color: isHovered ? '#fff' : '',
       }}
       transition={{
-        duration: 0.2,
-        ease: "easeInOut",
+        duration: 0.5,
+        ease: 'easeInOut',
       }}
     >
-      <div className="flex items-start">
-        <PreImage
-          src="https://media.istockphoto.com/id/807772812/photo/free-price-tag-label.jpg?b=1&s=612x612&w=0&k=20&c=fzSheLfuW29DGtg5nVudNgp0Wzvh4oaxTrI0qoZtsPU="
-          width={50}
-          height={50}
-          alt="solution"
-          className="mb-10"
-        />
+      <PreImage
+        src='https://c4.wallpaperflare.com/wallpaper/624/21/247/microsoft-windows-windows-10-technology-hi-tech-wallpaper-preview.jpg'
+        width={50}
+        height={50}
+        alt='solution'
+        className='mb-10 rounded-lg'
+      />
+      <div className='w-full h-full flex flex-col justify-between items-start gap-5'>
+        <motion.h1
+          initial={{ marginTop: '100px' }}
+          animate={{ marginTop: isHovered ? '0' : '100px' }}
+          transition={{
+            duration: 0.5,
+            ease: 'easeInOut',
+          }}
+          className='text-2xl uppercase mt-20'
+        >
+          {title}
+        </motion.h1>
+        {isHovered && (
+          <motion.p
+            initial='hidden'
+            animate={isHovered ? 'visible' : 'hidden'}
+            variants={{
+              visible: { opacity: 1, display: 'block' },
+              hidden: { opacity: 0, display: 'none' },
+            }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeInOut',
+            }}
+            className='none'
+          >
+            {description}
+          </motion.p>
+        )}
       </div>
-      <div className="flex flex-col justify-center items-start gap-10">
-        <h1 className="text-2xl uppercase">{title}</h1>
-        <p>{description}</p>
-        <BtnFindOut />
-      </div>
+      <BtnFindOut cls={'text-white'} />
     </motion.div>
   );
 };

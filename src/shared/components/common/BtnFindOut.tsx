@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import IconLineDirection from "../icon/IconLineDirection";
 
 interface Props {
-  cls?: any;
+  cls?: string;
+  colorSvg?: string
 }
 
-const BtnFindOut = ({ cls }: Props) => {
+const BtnFindOut = ({ cls, colorSvg }: Props) => {
   const buttonVariants = {
     hover: {
       backgroundColor: "var(--blue-color-600)",
@@ -16,12 +17,11 @@ const BtnFindOut = ({ cls }: Props) => {
 
   return (
     <motion.button
-      initial={{ backgroundColor: "var(--blue-color-400)" }}
       whileHover="hover"
-      className={`bg-[var(--blue-color-400)] relative flex justify-between items-center gap-3 text-black text-left py-4 px-4 rounded cursor-pointer mt-3 ${cls}`}
+      className={`relative flex justify-between items-center gap-3 text-black text-left py-4 px-4 rounded cursor-pointer mt-3 ${cls}`}
     >
       <p className="text-sm">Tìm hiểu thêm</p>
-      <IconLineDirection  color="#000" />
+      <IconLineDirection color={colorSvg} />
       <motion.div
         className="absolute left-0 top-0 h-full w-0"
         variants={buttonVariants}

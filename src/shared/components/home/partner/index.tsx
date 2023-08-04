@@ -12,8 +12,9 @@ const Partner = () => {
           findMore={true}
         />
         <div className="w-full mt-10 flex items-start justify-between gap-5" style={{borderBottom: "1px solid #555"}}>
-          {partnerData.map((item) => (
+          {partnerData.map((item, idx) => (
             <PreImage
+              key={idx}
               src={item.logo}
               height={200}
               width={200}
