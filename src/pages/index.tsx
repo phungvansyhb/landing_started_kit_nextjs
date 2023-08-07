@@ -1,21 +1,21 @@
 import Head from 'next/head';
-import LayoutWebsite from '@/shared/components/layout/LayoutWebsite';
-import Banner from '@/shared/components/home/banner';
-import { bannerData } from '@/shared/mock/banner';
-import NextGenerationSolution from '@/shared/components/home/nextGenerationSolution';
-import WhyUs from '@/shared/components/home/whyUs';
-import Testimonial from '@/shared/components/home/testimonial';
-import Service from '@/shared/components/home/service';
-import Event from '@/shared/components/home/event';
-import News from '@/shared/components/home/news';
-import Partner from '@/shared/components/home/partner';
-import Security from '@/shared/components/home/security';
-import Slogan from '@/shared/components/home/slogan';
-import AboutUs from '@/shared/components/home/aboutUs';
+import LayoutWebsite from 'src/shared/components/layout/LayoutWebsite';
+import Banner from 'src/shared/components/home/banner';
+import { bannerData } from 'src/shared/mock/banner';
+import NextGenerationSolution from 'src/shared/components/home/nextGenerationSolution';
+import WhyUs from 'src/shared/components/home/whyUs';
+import Testimonial from 'src/shared/components/home/testimonial';
+import Service from 'src/shared/components/home/service';
+import Event from 'src/shared/components/home/event';
+import News from 'src/shared/components/home/news';
+import Partner from 'src/shared/components/home/partner';
+import Security from 'src/shared/components/home/security';
+import Slogan from 'src/shared/components/home/slogan';
+import AboutUs from 'src/shared/components/home/aboutUs';
 import dynamic from 'next/dynamic';
-import ConnectUs from '@/shared/components/home/connectUs';
+import ConnectUs from 'src/shared/components/home/connectUs';
 
-const ScrollRevealWrapper = dynamic(() => import('@/shared/components/common/ScrollRevealWrapper'), { ssr: false });
+const ScrollRevealWrapper = dynamic(() => import('src/shared/components/common/ScrollRevealWrapper'), { ssr: false });
 export function Home() {
   return (
     <>

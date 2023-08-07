@@ -1,4 +1,4 @@
-import { ITestimonial, testimonialData } from "@/shared/mock/testimonial";
+import { ITestimonial, testimonialData } from "src/shared/mock/testimonial";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { PreImage } from "../../common/PreImage";

@@ -1,4 +1,4 @@
-import { newsData } from "@/shared/mock/news";
+import { newsData } from "src/shared/mock/news";
 import { PreImage } from "../../common/PreImage";
 import TitleSection from "../../common/TitleSection";
 import NewsItem from "./NewsItem";

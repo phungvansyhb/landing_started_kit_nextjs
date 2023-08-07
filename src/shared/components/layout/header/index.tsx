@@ -1,8 +1,14 @@
-import { fakeMenu } from '@/shared/mock/menu';
+import { fakeMenu } from 'src/shared/mock/menu';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { PreImage } from '../../common/PreImage';
 import logo from '../../../../../public/logo.svg';
+import ThemeModeToggle from '../../common/ToggleThemeMode';
+import LanguageSwitch from '../../common/LanguageSwitch';
+import { HambugerMenu } from './HambugerMenu';
+import { Sheet, SheetContent, SheetTrigger } from '../../common/ui/sheet';
+import { Button } from '@/components/common/ui/button';
+import { Menu } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,15 +32,14 @@ const Header = () => {
 
   return (
     <section
-      className={`w-full top-0 z-50 flex justify-between items-center gap-5 px-5 md:px-10 transition ${
-        isScrolled
-          ? 'sticky text-white border-b-[1px] border-opacity-50 border-black-300 inset-0 bg-opacity-10 backdrop-filter backdrop-blur duration-500 ease-in-out bg-[#000] h-[80px]'
-          : 'fixed bg-transparent bg-opacity-100 duration-500 ease-in-out'
-      }`}
+      className={`w-full top-0 z-50 flex justify-between items-center gap-5 px-5 md:px-10 transition ${isScrolled
+        ? 'sticky text-white border-b-[1px] border-opacity-50 border-black-300 inset-0 bg-opacity-10 backdrop-filter backdrop-blur duration-500 ease-in-out bg-[#000] h-[80px]'
+        : 'fixed bg-transparent bg-opacity-100 duration-500 ease-in-out'
+        }`}
     >
       <div className='flex justify-around items-center'>
         <PreImage height={100} width={100} src={logo} alt={'Logo'} layer={false} />
-        <ul className='justify-center items-cente gap-10 hidden lg:flex ml-10 text-white'>
+        <ul className='justify-center items-center gap-10 hidden lg:flex ml-10 text-white'>
           {fakeMenu.map((item, idx) => (
             <Link href={'#'} key={idx}>
               <li>{item}</li>
@@ -43,24 +48,6 @@ const Header = () => {
         </ul>
       </div>
       <div className='absolute right-5 flex justify-center items-center gap-2'>
-        {/* <button
-          id='dropdownDefaultButton'
-          data-dropdown-toggle='dropdown'
-          className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-          type='button'
-        >
-          Dropdown button{' '}
-          <svg
-            className='w-2.5 h-2.5 ml-2.5'
-            aria-hidden='true'
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 10 6'
-          >
-            <path stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='m1 1 4 4 4-4' />
-          </svg>
-        </button> */}
-        {/* Dropdown menu */}
         <div
           id='dropdown'
           className='z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700'
@@ -88,7 +75,32 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <button className='text-white font-bold py-2 px-4 rounded cursor-pointer hidden lg:block'>Liên hệ</button>
+        <div className='flex gap-8 items-center'>
+          <div className='lg:hidden'>
+            <Sheet>
+              <SheetTrigger asChild>
+                <div>
+                  <Menu />
+                </div>
+              </SheetTrigger>
+              <SheetContent className="w-[200px]" side={'left'}>
+                <div>
+                  {fakeMenu.map((item, idx) => (
+                    <Link href={'#'} key={idx}>
+                      <li>{item}</li>
+                    </Link>
+                  ))}
+
+                </div>
+
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          <ThemeModeToggle />
+          <LanguageSwitch />
+          <button className='text-white font-bold py-2 px-4 rounded cursor-pointer hidden lg:block'>Liên hệ</button>
+        </div>
       </div>
       <div className='block md:hidden'>...</div>
     </section>

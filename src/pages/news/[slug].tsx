@@ -1,19 +1,19 @@
-import { LatestNews } from '@/shared/components/business/news/LatestNews';
-import { PreImage } from '@/shared/components/common/PreImage';
-import { useAppDispatch } from '@/shared/hooks/useRedux';
-import { useGetListLatestArticle } from '@/shared/schema/models/IArticle';
-import { toggleMenu } from '@/shared/stores/appSlice';
-import { TIME_FORMAT } from '@/shared/utils/constants/appContants';
+import { LatestNews } from 'src/shared/components/business/news/LatestNews';
+import { PreImage } from 'src/shared/components/common/PreImage';
+import { useAppDispatch } from 'src/shared/hooks/useRedux';
+import { useGetListLatestArticle } from 'src/shared/schema/models/IArticle';
+import { toggleMenu } from 'src/shared/stores/appSlice';
+import { TIME_FORMAT } from 'src/shared/utils/constants/appContants';
 import { Affix, Breadcrumb, Col, Row } from 'antd';
 import dayjs from 'dayjs';
 import parse from 'html-react-parser';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next'
-import DashBoardLayout from '@/shared/components/layouts/dashboard/DashboardLayout';
-import useTrans from '@/shared/hooks/useTrans';
+import DashBoardLayout from 'src/shared/components/layouts/dashboard/DashboardLayout';
+import useTrans from 'src/shared/hooks/useTrans';
 import Link from 'next/link';
-import { URLS } from '@/shared/utils/constants/appMenu';
+import { URLS } from 'src/shared/utils/constants/appMenu';
 
 interface Props {
   data: any
@@ -23,7 +23,7 @@ const DetailNews = ({ data }: Props) => {
   const router = useRouter()
   const [html, setHtml] = useState<any>()
   const categoryName = 'Internal News';
-  const {trans} = useTrans()
+  const { trans } = useTrans()
   const { data: dataLatestArticle } = useGetListLatestArticle({ search: categoryName });
   useEffect(() => {
     dispatch(toggleMenu(true))
@@ -38,7 +38,7 @@ const DetailNews = ({ data }: Props) => {
           <Col xs={24} sm={24} lg={16}>
             <div className='relative w-full overflow-auto overflow-y-hidden'>
               <div className='absolute z-10 w-full'>
-                <PreImage src={data.image} height={400}/>
+                <PreImage src={data.image} height={400} />
               </div>
               <div className='rounded-sm relative left-1/2 z-50 min-h-screen w-[95%] -translate-x-1/2 transform bg-white px-5 mobile:w-[98%] mobile:px-2 mt-40'>
                 <div className='h-full w-full'>

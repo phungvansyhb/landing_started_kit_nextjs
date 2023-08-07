@@ -1,4 +1,4 @@
-import { eventData } from "@/shared/mock/event";
+import { eventData } from "src/shared/mock/event";
 import TitleSection from "../../common/TitleSection";
 import EventItem from "./EventItem";
 

@@ -1,14 +1,15 @@
-import "@/styles/globals.css";
-import "@/styles/business-color.css";
+import "../styles/globals.css";
+import "../styles/business-color.css";
+import "../styles/customStyle.scss";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import LayoutWebsite from "@/shared/components/layout/LayoutWebsite";
+import LayoutWebsite from "src/shared/components/layout/LayoutWebsite";
 import Head from "next/head";
-import { Golos_Text, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-const goloText = Golos_Text({ subsets: ["latin-ext", "cyrillic"], display: 'swap', weight: ['500', '600', '700', '800', '900'] })
 const interText = Inter({ subsets: ["vietnamese"], display: 'swap', weight: ['500', '600', '700', '800', '900'] })
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -22,6 +23,8 @@ const queryClient = new QueryClient({
     queries: { refetchOnWindowFocus: false, retry: 1 },
   },
 });
+
+
 const ConfigLayout = ({
   children,
   getLayout,
@@ -29,8 +32,16 @@ const ConfigLayout = ({
   children: React.ReactElement;
   getLayout: (page: ReactElement) => React.ReactNode;
 }) => {
-  return <>{getLayout(children)}</>;
+  return <main className={interText.className}>
+    {/* TODO change theme */}
+    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+      {getLayout(children)}
+    </NextThemesProvider>
+  </main>
 };
+
+
+
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ?? ((page) => <LayoutWebsite>{page}</LayoutWebsite>);

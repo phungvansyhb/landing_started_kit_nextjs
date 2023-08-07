@@ -1,5 +1,5 @@
 import { PreImage } from '../../common/PreImage';
-import { IEvent } from '@/shared/mock/event';
+import { IEvent } from 'src/shared/mock/event';
 import BtnCommon from '../../common/BtnCommon';
 interface Props {
   data: IEvent;

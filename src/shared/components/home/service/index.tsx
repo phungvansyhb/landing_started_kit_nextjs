@@ -1,4 +1,4 @@
-import { NGSDataService } from "@/shared/mock/service";
+import { NGSDataService } from "src/shared/mock/service";
 import { PreImage } from "../../common/PreImage";
 import TitleSection from "../../common/TitleSection";
 import ServiceSection from "./ServiceSection";
@@ -25,11 +25,11 @@ const Service = () => {
           className="relative rounded-lg"
         />
         <AnimatePresence>
-        <div className="w-1/2 flex flex-col justify-center items-center">
-          {NGSDataService.map((item, idx) => {
-            return <ServiceSection key={idx} item={item} idx={idx} />;
-          })}
-        </div>
+          <div className="w-1/2 flex flex-col justify-center items-center">
+            {NGSDataService.map((item, idx) => {
+              return <ServiceSection key={idx} item={item} idx={idx} />;
+            })}
+          </div>
         </AnimatePresence>
       </div>
     </section>

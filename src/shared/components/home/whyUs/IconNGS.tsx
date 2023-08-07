@@ -1,4 +1,4 @@
-import { IWhyUsData, WhyUsData } from "@/shared/mock/whyUs";
+import { IWhyUsData, WhyUsData } from "src/shared/mock/whyUs";
 import IconFirst from "../../icon/iconLogoWhyUs/iconFirst";
 import IconLast from "../../icon/iconLogoWhyUs/iconLast";
 import IconMid from "../../icon/iconLogoWhyUs/iconMid";

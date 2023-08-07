@@ -1,9 +1,9 @@
-import { ITestimonial } from "@/shared/mock/testimonial";
+import { ITestimonial } from "src/shared/mock/testimonial";
 
 export interface Props extends ITestimonial {
- 
+
 }
-const ContentTestimonial = ({data}: any) => {
+const ContentTestimonial = ({ data }: any) => {
   return (
     <div className="absolute bottom-0 right-0 left-0 w-full text-white p-5">
       <h2 className="text-center text-2xl">{data.title}</h2>

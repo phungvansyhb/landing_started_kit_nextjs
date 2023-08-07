@@ -1,4 +1,4 @@
-import { IWhyUsData, WhyUsData } from '@/shared/mock/whyUs';
+import { IWhyUsData, WhyUsData } from 'src/shared/mock/whyUs';
 import { motion } from 'framer-motion';
 interface Props {
   setSelectedIcon: any;
@@ -32,9 +32,8 @@ const ContentWhyUs = ({ setSelectedIcon, selectedIcon }: Props) => {
               animate={selectedIcon === item ? 'active' : 'inactive'}
               variants={contentAnimated}
               onClick={() => setSelectedIcon(item as IWhyUsData)}
-              className={`px-5 border-b-4 cursor-pointer ${
-                idx === 0 ? 'rounded-l-sm' : idx === WhyUsData.length - 1 ? 'rounded-r-sm' : ''
-              }`}
+              className={`px-5 border-b-4 cursor-pointer ${idx === 0 ? 'rounded-l-sm' : idx === WhyUsData.length - 1 ? 'rounded-r-sm' : ''
+                }`}
             >
               {item.title}
             </motion.div>

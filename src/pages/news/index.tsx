@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import LayoutWebsite from '@/shared/components/layout/LayoutWebsite';
+import LayoutWebsite from 'src/shared/components/layout/LayoutWebsite';
 
 export function News() {
   return (
