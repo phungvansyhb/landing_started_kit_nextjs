@@ -6,10 +6,10 @@ interface Props {
   colorSvg?: string
 }
 
-const BtnFindOut = ({ cls, colorSvg }: Props) => {
+const BtnCommon = ({ cls, colorSvg }: Props) => {
   const buttonVariants = {
     hover: {
-      backgroundColor: "var(--blue-color-600)",
+      backgroundColor: "var(--violet-color-600)",
       width: "100%",
       opacity: 0.3      
     },
@@ -18,12 +18,12 @@ const BtnFindOut = ({ cls, colorSvg }: Props) => {
   return (
     <motion.button
       whileHover="hover"
-      className={`relative flex justify-between items-center gap-3 text-black text-left py-4 px-4 rounded cursor-pointer mt-3 ${cls}`}
+      className={`bg-[#723AD4] text-white relative flex justify-between items-center gap-3 text-left py-4 px-4 cursor-pointer mt-3 rounded-full ${cls}`}
     >
       <p className="text-sm">Tìm hiểu thêm</p>
       <IconLineDirection color={colorSvg} />
       <motion.div
-        className="absolute left-0 top-0 h-full w-0"
+        className="absolute left-0 top-0 h-full w-[30%] rounded-full"
         variants={buttonVariants}
         transition={{
           duration: 0.3,
@@ -34,4 +34,4 @@ const BtnFindOut = ({ cls, colorSvg }: Props) => {
   );
 };
 
-export default BtnFindOut;
+export default BtnCommon;

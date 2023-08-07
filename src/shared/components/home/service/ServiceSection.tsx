@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import BtnCommon from "../../common/BtnCommon";
 
 interface Props {
   item: any;
@@ -17,7 +18,7 @@ const ServiceSection = ({ item, idx }: Props) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex justify-start items-start gap-8">
-        <div className="text-3xl">0{idx + 1}</div>
+        <div className="mb-3 text-2xl">0{idx + 1}</div>
         <h1 className="text-3xl">{item.title}</h1>
       </div>
 
@@ -31,9 +32,7 @@ const ServiceSection = ({ item, idx }: Props) => {
         }}
       >
         <p>{item.des}</p>
-        <p className="my-3 text-sm text-[var(--blue-color-300)] cursor-pointer">
-          Tìm hiểu thêm
-        </p>
+        <BtnCommon colorSvg={'#fff'} />
       </motion.div>
     </div>
   );

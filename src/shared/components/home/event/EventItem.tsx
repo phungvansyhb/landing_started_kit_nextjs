@@ -1,6 +1,6 @@
 import { PreImage } from '../../common/PreImage';
 import { IEvent } from '@/shared/mock/event';
-import BtnFindOut from '../../common/BtnFindOut';
+import BtnCommon from '../../common/BtnCommon';
 interface Props {
   data: IEvent;
 }
@@ -12,7 +12,7 @@ const EventItem = ({ data }: Props) => {
       <h2>{data.description}</h2>
       <p>{data.address}</p>
       <p>{data.time}</p>
-      <BtnFindOut />
+      <BtnCommon />
     </div>
   );
 };

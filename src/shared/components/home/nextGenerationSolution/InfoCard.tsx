@@ -1,7 +1,8 @@
 import { PreImage } from '../../common/PreImage';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import BtnFindOut from '../../common/BtnFindOut';
+import BtnCommon from '../../common/BtnCommon';
+import IconLineDirection from '../../icon/IconLineDirection';
 
 interface Props {
   title: string;
@@ -64,7 +65,10 @@ const InfoCard = ({ title, description, className }: Props) => {
           </motion.p>
         )}
       </div>
-      <BtnFindOut cls={'text-white'} />
+      <div className='flex justify-between items-center gap-3 mt-10'>
+        <motion.p className={`text-sm ${isHovered ? "underline" : "none"}`}>Tìm hiểu thêm</motion.p>
+        <IconLineDirection color={'#fff'} />
+      </div>
     </motion.div>
   );
 };

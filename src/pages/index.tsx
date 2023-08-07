@@ -13,6 +13,7 @@ import Security from '@/shared/components/home/security';
 import Slogan from '@/shared/components/home/slogan';
 import AboutUs from '@/shared/components/home/aboutUs';
 import dynamic from 'next/dynamic';
+import ConnectUs from '@/shared/components/home/connectUs';
 
 const ScrollRevealWrapper = dynamic(() => import('@/shared/components/common/ScrollRevealWrapper'), { ssr: false });
 export function Home() {
@@ -53,9 +54,11 @@ export function Home() {
       <ScrollRevealWrapper>
         <Partner />
       </ScrollRevealWrapper>
-
       <ScrollRevealWrapper>
         <Testimonial />
+      </ScrollRevealWrapper>
+      <ScrollRevealWrapper>
+        <ConnectUs />
       </ScrollRevealWrapper>
     </>
   );
