@@ -1,9 +1,9 @@
-import { partnerData } from '@/shared/mock/partner';
-import { IWhyUsData, WhyUsData } from '@/shared/mock/whyUs';
 import { useState } from 'react';
 import { PreImage } from '../../common/PreImage';
 import ContentWhyUs from './ContentWhyUs';
 import IconNGS from './IconNGS';
+import { IWhyUsData, WhyUsData } from '@/mocks/whyUs';
+import { partnerData } from '@/mocks/partner';
 
 const WhyUs = () => {
   const [selectedIcon, setSelectedIcon] = useState<IWhyUsData>(WhyUsData[0]);

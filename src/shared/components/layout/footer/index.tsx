@@ -1,4 +1,4 @@
-import { footerData } from "@/shared/mock/footer";
+import { footerData } from "@/mocks/footer";
 import MenuNGS from "../../icon/logo/MenuNGS";
 import InforFooter from "./info";
 
