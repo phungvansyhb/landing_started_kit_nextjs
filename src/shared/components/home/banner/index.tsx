@@ -30,7 +30,7 @@ const Banner = ({ data }: Props) => {
   };
   
   return (
-    <section className="block py-24">
+    <section className="block py-24 bg-transparent">
       <div className="snap-x-mandatory scrollbar-none relative max-h-[700px] flex overflow-hidden text-white">
         <div className="relative w-full flex justify-between items-center mx-auto">
         <ContentBanner selectedTab={selectedTab && selectedTab} />
@@ -42,7 +42,7 @@ const Banner = ({ data }: Props) => {
             transition={{ duration: 0.1 }}
             className="w-full flex-shrink-0 snap-start"
           >
-            <PreImage src={selectedTab && selectedTab.image} height={1080} width={1980} layer={true} alt={"Banner"} className="rounded-lg"/>
+            <PreImage src={selectedTab && selectedTab.image} height={1080} width={1980} layer={true} alt={"Banner"} className="rounded-tl-[90%] rounded-tr-[0%] border-b-8 transform translate-y-72"/>
           </motion.div>
         </AnimatePresence>
         </div>

@@ -1,13 +1,13 @@
 import { footerData } from "@/shared/mock/footer";
-import FooterNGS from "../../icon/logo/FooterNGS";
+import MenuNGS from "../../icon/logo/MenuNGS";
 import InforFooter from "./info";
 
 const Footer = () => {
   return (
-    <section className="w-full flex flex-col gap-5 justify-between items-center mx-auto px-16 py-10 bg-[#160A0F] text-white font-thin">
+    <section className="w-full flex flex-col gap-5 justify-between items-center mx-auto px-16 py-10 bg-[#000] text-white font-thin">
       <div className="grid grid-cols-4 gap-4 items-center">
         <div className="flex flex-col justify-center items-start">
-          <FooterNGS className="mb-3" />
+          <MenuNGS className="mb-3" />
           <p>Địa chỉ: {footerData.contactData.address}</p>
           <p>Số điện thoại: {footerData.contactData.phone}</p>
           <p>Email: {footerData.contactData.email}</p>
